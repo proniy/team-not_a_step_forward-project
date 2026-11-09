@@ -300,14 +300,6 @@ GET /api/recommendations?mood=joy&limit=2
 
 ---
 
-## 🧪 Тесты
-
-```bash
-dotnet test
-```
-
----
-
 ## 🗺️ Roadmap
 
 - [x] Базовая структура проекта
