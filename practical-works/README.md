@@ -6,9 +6,9 @@
 
 *Грустно? Весело? Хочется адреналина или уюта?*
 *Скажи, как ты себя чувствуешь, — а Кинолюксия подберёт, что посмотреть.*
-###Ссылка на опрос:https://docs.google.com/forms/d/e/1FAIpQLScdApBOfrrCylLRPwPLSGpr_6bIxRJW7-cldCFSdCdm5uQWHQ/viewform?usp=publish-editor
+Ссылка на опрос:https://docs.google.com/forms/d/e/1FAIpQLScdApBOfrrCylLRPwPLSGpr_6bIxRJW7-cldCFSdCdm5uQWHQ/viewform?usp=publish-editor
 
-###Ссылка на результаты опроса: https://docs.google.com/spreadsheets/d/15DE1VLiDi9zIcS8VNVpRR4tVKIvRWOWkyMHNe9Q-uMY/edit?gid=1524503113#gid=1524503113
+Ссылка на результаты опроса: https://docs.google.com/spreadsheets/d/15DE1VLiDi9zIcS8VNVpRR4tVKIvRWOWkyMHNe9Q-uMY/edit?gid=1524503113#gid=1524503113
 
 <br>
 
