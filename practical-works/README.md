@@ -139,10 +139,8 @@ dotnet run --project src/Kinolyuksiya.Api
 
 ### ER-диаграмма
 
-
-```image 
 <img width="734" height="566" alt="image" src="https://github.com/user-attachments/assets/03581192-7232-4783-b4f1-d8ee28b4859c" />
-```
+
 
 ### Работа через pgAdmin
 
