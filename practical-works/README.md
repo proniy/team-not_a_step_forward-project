@@ -6,6 +6,7 @@
 
 *Грустно? Весело? Хочется адреналина или уюта?*
 *Скажи, как ты себя чувствуешь, — а Кинолюксия подберёт, что посмотреть.*
+
 Ссылка на опрос:https://docs.google.com/forms/d/e/1FAIpQLScdApBOfrrCylLRPwPLSGpr_6bIxRJW7-cldCFSdCdm5uQWHQ/viewform?usp=publish-editor
 
 Ссылка на результаты опроса: https://docs.google.com/spreadsheets/d/15DE1VLiDi9zIcS8VNVpRR4tVKIvRWOWkyMHNe9Q-uMY/edit?gid=1524503113#gid=1524503113
@@ -62,17 +63,6 @@
 
 Каждому фильму сопоставляются **настроения с весами** (от 0 до 1). Когда пользователь выбирает настроение, сервис ранжирует фильмы по степени совпадения и дополнительно учитывает рейтинг и личные предпочтения.
 
-```mermaid
-flowchart LR
-    A([👤 Пользователь]) -->|выбирает настроение| B[🌐 ASP.NET Core API]
-    B --> C{🧠 Сервис рекомендаций}
-    C -->|веса настроений| D[(🐘 PostgreSQL)]
-    C -->|история оценок| D
-    D --> C
-    C -->|топ-N фильмов| B
-    B -->|JSON| A
-```
-
 **Формула релевантности:**
 
 ```
@@ -93,23 +83,6 @@ score = mood_weight × 0.6  +  avg_rating / 10 × 0.3  +  user_affinity × 0.1
 | **Аутентификация** | JWT Bearer |
 | **Документация** | Swagger / OpenAPI |
 | **Тесты** | xUnit |
-
----
-
-## 🏗️ Структура проекта
-
-```
-Kinolyuksiya/
-├── 📁 src/
-│   ├── 📁 Kinolyuksiya.Api/             # Контроллеры, middleware, Program.cs
-│   ├── 📁 Kinolyuksiya.Application/     # Сервисы, DTO, логика рекомендаций
-│   ├── 📁 Kinolyuksiya.Domain/          # Сущности (Movie, Mood, User…)
-│   └── 📁 Kinolyuksiya.Infrastructure/  # EF Core, DbContext, миграции
-├── 📁 tests/
-│   └── 📁 Kinolyuksiya.Tests/           # Unit-тесты
-├── 📄 Kinolyuksiya.sln
-└── 📄 README.md
-```
 
 ---
 
@@ -166,63 +139,10 @@ dotnet run --project src/Kinolyuksiya.Api
 
 ### ER-диаграмма
 
-```mermaid
-erDiagram
-    USERS ||--o{ RATINGS : "оставляет"
-    USERS ||--o{ FAVORITES : "добавляет"
-    MOVIES ||--o{ RATINGS : "получает"
-    MOVIES ||--o{ FAVORITES : "в избранном"
-    MOVIES ||--o{ MOVIE_MOODS : "имеет"
-    MOODS  ||--o{ MOVIE_MOODS : "описывает"
-    MOVIES ||--o{ MOVIE_GENRES : "относится"
-    GENRES ||--o{ MOVIE_GENRES : "включает"
 
-    USERS {
-        int id PK
-        string username
-        string email
-        string password_hash
-        timestamp created_at
-    }
-    MOVIES {
-        int id PK
-        string title
-        text description
-        int year
-        int duration_min
-        decimal avg_rating
-        string poster_url
-    }
-    MOODS {
-        int id PK
-        string name
-        string emoji
-    }
-    MOVIE_MOODS {
-        int movie_id FK
-        int mood_id FK
-        decimal weight
-    }
-    GENRES {
-        int id PK
-        string name
-    }
-    MOVIE_GENRES {
-        int movie_id FK
-        int genre_id FK
-    }
-    RATINGS {
-        int id PK
-        int user_id FK
-        int movie_id FK
-        int score
-        text review
-    }
-    FAVORITES {
-        int user_id FK
-        int movie_id FK
-        timestamp added_at
-    }
+```
+<img width="734" height="566" alt="image" src="https://github.com/user-attachments/assets/03581192-7232-4783-b4f1-d8ee28b4859c" />
+
 ```
 
 ### Работа через pgAdmin
